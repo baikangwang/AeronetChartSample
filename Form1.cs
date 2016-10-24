@@ -30,7 +30,7 @@ namespace AeronetChartSample
             InitData();
 
             this.comboBox1.SelectedIndex = 0;
-            this.comboBox2.SelectedIndex = 1;
+            this.comboBox2.SelectedIndex = 0;
             this.Text = "Aeronet Chart Sample";
         }
 
