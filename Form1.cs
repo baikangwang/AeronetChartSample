@@ -21,6 +21,13 @@ namespace AeronetChartSample
             ChartArea caDefault = new ChartArea("Default");
             this.chart1.ChartAreas.Clear();
             this.chart1.ChartAreas.Add(caDefault);
+            // X axis value labels
+            caDefault.AxisX.Minimum = 350;
+            caDefault.AxisX.Interval = 150;
+            caDefault.AxisX.Maximum = 900;
+            // X axis and Y axis Title
+            caDefault.AxisX.Title = "X Axis";
+            caDefault.AxisY.Title = "Y Axis";
             Legend lgDefault = new Legend("Default");
             this.chart1.Legends.Clear();
             this.chart1.Legends.Add(lgDefault);
@@ -69,7 +76,7 @@ namespace AeronetChartSample
                 var points = data[time];
                 foreach (var point in points)
                 {
-                    timeLine.Points.Add(new DataPoint(point.X, point.Y));
+                    timeLine.Points.Add(new DataPoint(point.X, point.Y) { MarkerSize = 5, MarkerStyle = MarkerStyle.Square });
                 }
                 this.chart1.Series.Add(timeLine);
             }
